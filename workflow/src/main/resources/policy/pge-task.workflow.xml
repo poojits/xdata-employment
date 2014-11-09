@@ -1,0 +1,8 @@
+<cas:workflow xmlns:cas="http://oodt.jpl.nasa.gov/1.0/cas"
+  name="PGETaskWorkflow"
+  id="urn:oodt:PGETaskWorkflow">
+ 
+  <tasks>
+    <task id="urn:oodt:PGETask"/>
+  </tasks>
+</cas:workflow>

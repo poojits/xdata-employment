@@ -18,4 +18,25 @@
 <!--
   TODO: Add some examples
 -->
+<task id="urn:oodt:PGETask" name="PGETask"
+  class="org.apache.oodt.pge.examples.pgetask.PGETask">
+ 
+  <conditions/>
+ 
+  <configuration>
+     <property name="PGETask_Name" value="PGETask"/>
+     <property name="PGETask_ConfigFilePath" value="/home/poojit/Desktop/xdata-employment/pge/policy/pge_task/pge-configs/PGEConfig.xml" envReplace="true"/>
+     <property name="PGETask_DumpMetadata" value="true"/>
+     <property name="PCS_WorkflowManagerUrl" value="http://localhost:9001" envReplace="true" />
+     <property name="PCS_FileManagerUrl"     value="http://localhost:9000" envReplace="true"/>
+     <property name="PCS_MetFileExtension" value="met"/>
+     <property name="PCS_ClientTransferServiceFactory" value="org.apache.oodt.cas.filemgr.datatransfer.LocalDataTransferFactory"/>
+     <!--<property name="PCS_ActionRepoFile" value="file:[CRAWLER_HOME]/policy/crawler-config.xml" envReplace="true"/> -->
+  </configuration>
+ 
+  <requiredMetFields>
+     <metfield name="RunID"/>
+  </requiredMetFields>
+ 
+</task>
 </cas:tasks>
