@@ -10,5 +10,3 @@
 #			PROJECT_JOB_DIR=/usr/local/project/data/jobs
 #
 ############################
-
-JobDir=/home/poojit/Desktop
