@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.cs572</groupId>
+    <artifactId>xdata-employment</artifactId>
+    <version>0.1</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <name>PGETask</name>
+  <artifactId>pge-task</artifactId>
+  <packaging>jar</packaging>
+  <groupId>org.apache.oodt.pge</groupId>
+  <version>1.0</version>
+  <description>CAS-PGE</description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.oodt</groupId>
+  		<artifactId>cas-pge</artifactId>
+  		<version>0.3</version>
+  		<scope>compile</scope>
+  	</dependency>
+  </dependencies>
+</project>
+

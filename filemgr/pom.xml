@@ -89,6 +89,13 @@
    </profiles>
    <dependencies>
       <dependency>
+         <groupId>org.apache.oodt.pge</groupId>
+         <artifactId>pge-task</artifactId>
+         <version>1.0</version>
+         <type>jar</type>
+         <scope>runtime</scope>
+      </dependency>
+      <dependency>
          <groupId>com.cs572</groupId>
          <artifactId>xdata-employment-extensions</artifactId>
          <version>${project.parent.version}</version>

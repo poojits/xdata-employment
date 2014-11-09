@@ -127,5 +127,6 @@
     <module>solr</module>
     <module>distribution</module>
     <module>webapps</module>
+    <module>pge-task</module>
   </modules>
 </project>
