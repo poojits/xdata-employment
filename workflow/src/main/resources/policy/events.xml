@@ -18,7 +18,7 @@
 <!--
   TODO: Add some examples
 -->
-<event name="pge-task">
+<event name="GenericFileIngest">
     <workflow id="urn:oodt:PGETaskWorkflow"/>
 </event>
 </cas:workflowevents>

@@ -35,7 +35,8 @@
   </configuration>
  
   <requiredMetFields>
-     <metfield name="RunID"/>
+    <metfield name="Filename"/>
+    <metfield name="FileLocation"/>
   </requiredMetFields>
  
 </task>

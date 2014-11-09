@@ -31,7 +31,6 @@ the License.
   <field name="ProcessingNode"/>
 </workflow>
 <workflow id="urn:oodt:PGETaskWorkflow">
-	<field name="RunID"/>
 </workflow>
 <!--
   TODO: Add some documentation
