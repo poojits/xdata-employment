@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+import sys
+sys.path[0:0] = [
+  '/Users/poojit/workspace/etllib',
+  '/Users/poojit/workspace/etllib/eggs/python_magic-0.4.6-py2.7.egg',
+  '/Users/poojit/workspace/etllib/eggs/iso8601-0.1.10-py2.7.egg',
+  '/Users/poojit/workspace/etllib/eggs/setuptools-7.0-py2.7.egg',
+  ]
+
+import etl.poster
+
+if __name__ == '__main__':
+    sys.exit(etl.poster.main())

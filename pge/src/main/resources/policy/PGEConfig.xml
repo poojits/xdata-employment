@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pgeConfig>
+    <!-- How to run the PGE -->
+    <exe dir="[ScriptDir]" shell="/bin/bash">
+        <cmd>echo [FileLocation]/[Filename]</cmd>
+        <cmd>python EmploymentMetExtractor.py -f [FileLocation]/[Filename] -v</cmd>
+        <cmd>echo [FileLocation]/[Filename] | poster -v -u http://localhost:8080/solr/update/json?commit=true</cmd>
+    </exe>
+
+    <!-- Files to ingest -->
+    <!--
+    <output>
+        <dir path="[JobDir]" createBeforeExe="false">           
+            <files regExp=".*\.txt" metFileWriterClass="org.apache.oodt.pge.examples.fileconcatenator.writers.ConcactenatingFilenameExtractorWriter"  args="[OODT_HOME]/etllib-workflow/extractors/concatenatingfilename.extractor.config.xml"/>
+            <files regExp=".*\.txt" metFileWriterClass="org.apache.oodt.cas.pge.writers.metlist.MetadataListPcsMetFileWriter" args="[OODT_HOME]/etllib-workflow/extractors/metlistwriter/metout.xml"/>
+        </dir>
+    </output>
+    -->
+
+    <!-- Custom metadata to add to output files -->
+    <customMetadata>
+        <!-- helpful keys -->
+        <metadata key="LessThan" val="&#x3C;"/>
+        <metadata key="LessThanOrEqualTo" val="[LessThan]="/>
+        <metadata key="GreaterThan" val="&#x3E;"/>
+        <metadata key="GreaterThanOrEqualTo" val="[GreaterThan]="/>
+        <metadata key="Exclamation" val="&#33;"/>
+        <metadata key="Ampersand" val="&#38;"/>
+        <metadata key="NotEqualTo" val="[Ampersand]="/>
+        <metadata key="LogicalAnd" val="[Ampersand][Ampersand]"/>
+        <metadata key="CshPipeToStdOutAndError" val="[GreaterThan][Ampersand][Exclamation]"/>
+
+        <metadata key="ProductionDateTime" val="[DATE.UTC]"/>
+        <metadata key="ScriptDir" val="/Users/poojit/Documents/xdata-employment-src/scripts/"/>
+        <!-- metadata key="InputFile" val="~/etllib-workflow/files/computrabajo-ve-20131213.tsv_99.json"/ -->
+        <!-- metadata key="OutputFile" val="[JobDir]/concatenatedOutputFile-[ProductionDateTime].txt"/ -->        
+  </customMetadata>
+</pgeConfig>

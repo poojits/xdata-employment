@@ -1,0 +1,9 @@
+
+<cas:workflow xmlns:cas="http://oodt.jpl.nasa.gov/1.0/cas"
+  name="ETLLibWorkflow"
+  id="urn:oodt:ETLLibWorkflow">
+ 
+  <tasks>
+    <task id="urn:oodt:ETLLibPoster"/>
+  </tasks>
+</cas:workflow>

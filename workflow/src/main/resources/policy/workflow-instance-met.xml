@@ -17,6 +17,7 @@ the License.
 -->
 <!-- FIXME: Change namespace URI? -->
 <cas:winstfields xmlns:cas="http://oodt.jpl.nasa.gov/1.0/cas">
+    
 <default>
   <field name="WorkflowInstId"/>
   <field name="TaskId"/>
@@ -29,6 +30,10 @@ the License.
   <field name="numSeconds"/>
   <field name="WorkflowInstId"/>
   <field name="ProcessingNode"/>
+</workflow>
+
+<workflow id="urn:oodt:ETLLibWorkflow">
+
 </workflow>
 <!--
   TODO: Add some documentation

@@ -1,0 +1,10 @@
+./crawler_launcher \
+--operation --launchAutoCrawler \
+--filemgrUrl http://localhost:9000 \
+--clientTransferer org.apache.oodt.cas.filemgr.datatransfer.LocalDataTransferFactory \
+--productPath /Users/zichuanwang/Downloads/shit \
+--mimeExtractorRepo ../policy/mime-extractor-map.xml \
+--workflowMgrUrl http://localhost:9200 \
+-ais TriggerPostIngestWorkflow
+
+./wmgr-client --url http://localhost:9200 --operation --sendEvent --eventName GenericFileIngest --metaData --key RunID testNumber1

@@ -18,4 +18,23 @@
 <!--
   TODO: Add some examples
 -->
+  <task id="urn:oodt:ETLLibPoster" name="ETLLibPoster" class="org.apache.oodt.pge.examples.etllib.ETLLibPGETask">
+    <conditions/>
+
+    <configuration>
+       <property name="PGETask_Name" value="ETLLibPoster"/>
+       <property name="PGETask_ConfigFilePath" value="[PGE_HOME]/policy/PGEConfig.xml" envReplace="true"/>
+       <property name="PGETask_DumpMetadata" value="true"/>
+       <property name="PCS_WorkflowManagerUrl" value="http://localhost:9001" envReplace="true" />
+       <property name="PCS_FileManagerUrl"     value="http://localhost:9000" envReplace="true"/>
+       <property name="PCS_MetFileExtension" value="met"/>
+       <property name="PCS_ClientTransferServiceFactory" value="org.apache.oodt.cas.filemgr.datatransfer.LocalDataTransferFactory"/>
+       <!-- property name="PCS_ActionRepoFile" value="file:[CRAWLER_HOME]/policy/crawler-config.xml" envReplace="true"/ -->
+    </configuration>
+   
+    <requiredMetFields>
+       <metfield name="Filename"/>
+       <metfield name="FileLocation"/>
+    </requiredMetFields>
+  </task>
 </cas:tasks>
