@@ -22,9 +22,9 @@ def main(argv=None):
     geoCount = pickle.load(f)
     geoSum = sum([geoCount[v] for v in geoCount])
 
-  with open(picklePath+'company.pickle', 'rb') as f:
-    companyCount = pickle.load(f)
-    companySum = sum([companyCount[v] for v in companyCount])
+  with open(picklePath+'jobtype.pickle', 'rb') as f:
+    jobCount = pickle.load(f)
+    jobSum = sum([jobCount[v] for v in jobCount])
 
   try:
     with open( filePath, 'r') as f:
@@ -33,12 +33,12 @@ def main(argv=None):
       except:
         return
 
-      if j['lattitude'] == '' or j['longitude'] == '' or j['company'] == '':
+      if j['lattitude'] == '' or j['longitude'] == '' or j['jobtype'] == '':
         j['boost'] = 0.0
       else:
         gh = geohash.encode(float(j['lattitude']), float(j['longitude']))[:2]
-        c = j['company']
-        j['boost'] = (geoCount[gh]/geoSum + companyCount[c]/companySum)/2.0
+        c = j['jobtype']
+        j['boost'] = (geoCount[gh]/geoSum + jobCount[c]/jobSum)/2.0
 
         j['latitude'] = j['lattitude']
         del j['lattitude']

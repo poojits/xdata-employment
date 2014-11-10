@@ -9,7 +9,7 @@ opts, args = getopt.getopt(argv[1:],'d:',['-dir='])
 option, value = opts[0]
 
 geoCount = dict()
-companyCount = dict()
+jobCount = dict()
 
 rootPath = value.rstrip('/')+'/'
 picklePath = './'
@@ -21,28 +21,31 @@ fileList = [file for file in os.listdir(rootPath) if file.lower().endswith('.jso
 
 for file in fileList:
 	filePath = rootPath+ file
-	with open( filePath, 'r') as f:
-		j = json.load(f)
-		if j['lattitude'] == '' or j['longitude'] == '' or j['company'] == '':
-			continue
-		gh = geohash.encode(float(j['lattitude']), float(j['longitude']))[:2]
-		if gh in geoCount:
-			geoCount[gh] = geoCount[gh] + 1
-		else:
-			geoCount[gh] = 1.0
+	try:
+		with open( filePath, 'r') as f:
+			j = json.load(f)
+			if j['lattitude'] == '' or j['longitude'] == '' or j['jobtype'] == '':
+				continue
+			gh = geohash.encode(float(j['lattitude']), float(j['longitude']))[:2]
+			if gh in geoCount:
+				geoCount[gh] = geoCount[gh] + 1
+			else:
+				geoCount[gh] = 1.0
 
-		c = j['company']
-		if c in companyCount:
-			companyCount[c] = companyCount[c] + 1
-		else:
-			companyCount[c] = 1.0
+			c = j['jobtype']
+			if c in jobCount:
+				jobCount[c] = jobCount[c] + 1
+			else:
+				jobCount[c] = 1.0
+	except:
+		continue
 
 
-print 'company', len(companyCount)
-print 'sum geo', len(geoCount)
+print 'jobtype count', len(jobCount)
+print 'geo count', len(geoCount)
 
 with open(picklePath + 'geo.pickle', 'wb') as f:
 	pickle.dump(geoCount, f)
 
-with open(picklePath + 'company.pickle', 'wb') as f:
-	pickle.dump(companyCount, f)
+with open(picklePath + 'jobtype.pickle', 'wb') as f:
+	pickle.dump(jobCount, f)
