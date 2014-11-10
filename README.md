@@ -27,7 +27,9 @@ Running the Crawler
 cd crawler/bin
 screen
 time ./crawler_launcher --operation --launchAutoCrawler --filemgrUrl http://localhost:9000 --clientTransferer org.apache.oodt.cas.filemgr.datatransfer.LocalDataTransferFactory --productPath /media/hdd/dedupe --mimeExtractorRepo ../policy/mime-extractor-map.xml --workflowMgrUrl http://localhost:9001 -ais TriggerPostIngestWorkflow
-CTRL+A, D```
+CTRL+A, D
+```
+
 Open the browser to ```http://127.0.0.1:8080/solr/``` and see the files that are being indexed. Also refer to ```http://127.0.0.1:8080/opsui``` for system status.
 Keep in Mind
 ============
