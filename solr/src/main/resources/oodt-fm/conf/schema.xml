@@ -105,31 +105,28 @@
       and back compatibility is not guaranteed.  Names with both leading and
       trailing underscores (e.g. _version_) are reserved.
    -->
-        
-     
-   <!-- Solr unique document identifier -->
-   <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" /> 
 
    <!-- core xdata-employment attributes -->
-   <field name="postedDate" type="date" indexed="true" stored="true" required="true" multiValued="false"/>
+   <field name="postedDate" type="date" indexed="true" stored="true" required="false" multiValued="false"/>
    <field name="location" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
-   <field name="department" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-   <field name="title" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-   <field name="salary" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-   <field name="start" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-   <field name="duration" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-   <field name="jobtype" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-   <field name="applications" type="string" indexed="true" stored="true" required="true" multiValued="false"/> 
-   <field name="company" type="string" indexed="true" stored="true" required="true" multiValued="false"/>   
-   <field name="contactPerson" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
+   <field name="department" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="title" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="salary" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="start" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="duration" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="jobtype" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="applications" type="string" indexed="true" stored="true" required="false" multiValued="false"/> 
+   <field name="company" type="string" indexed="true" stored="true" required="false" multiValued="false"/>   
+   <field name="contactPerson" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
    <field name="phoneNumber" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
    <field name="faxNumber" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
-   <field name="latitude" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-   <field name="longitude" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-   <field name="firstSeenDate" type="date" indexed="true" stored="true" required="true" multiValued="false"/>
+   <field name="latitude" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="longitude" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="firstSeenDate" type="date" indexed="true" stored="true" required="false" multiValued="false"/>
    <field name="url" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-   <field name="lastSeenDate" type="date" indexed="true" stored="true" required="true" multiValued="false"/>
-  <!-- <field name="latlong" type="location" indexed="true" stored="true" required="false" multiValued="false"/> -->
+   <field name="lastSeenDate" type="date" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="latlong" type="location" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="boost" type="double" indexed="false" stored="true" required="false" multiValued="false"/>
 
   
    <!-- all other fields are indexed and stored as-is and can have multiple values -->
@@ -168,7 +165,7 @@
  <!-- Field to use to determine and enforce document uniqueness. 
       Unless this field is marked with required="false", it will be a required field
    -->
- <uniqueKey>id</uniqueKey>
+ <uniqueKey>url</uniqueKey>
 
  <!-- DEPRECATED: The defaultSearchField is consulted by various query parsers when
   parsing a query string that isn't explicit about the field.  Machine (non-user)
