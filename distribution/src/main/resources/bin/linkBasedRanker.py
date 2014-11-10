@@ -18,8 +18,11 @@ picklePath = './'
 
 # for folder in folderList:
 fileList = [file for file in os.listdir(rootPath) if file.lower().endswith('.json')]
-
+fileCount = len(fileList)
 for file in fileList:
+	fileCount = fileCount - 1
+	if fileCount % 100000 == 0:
+		print 'Jobs left ', fileCount
 	filePath = rootPath+ file
 	try:
 		with open( filePath, 'r') as f:
