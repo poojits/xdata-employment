@@ -40,3 +40,5 @@ Keep in Mind
 4. This contains SOLR as well, so please turn off other running instances of SOLR.
 5. This assumes that your data files are in ```/media/hdd/dedupe```. Please make the necessary change when running ```crawler_launcher```.
 6. For link based ranking, we run ```python linkBasedRanker.py -d /media/hdd/dedupe``` offline. We have already included the result of this in ```xdata-employment/distribution/src/main/resources/bin``` folder as ```*.pickle``` files.
+7. The schema.xml file for solr is location in xdata-employment/solr/src/main/resources/oodt-fm/conf
+8. To run the set of queries, please run ./query.sh
