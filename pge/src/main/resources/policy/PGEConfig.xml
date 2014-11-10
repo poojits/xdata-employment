@@ -5,9 +5,9 @@
   <exe dir="[JobDir]" shell="/bin/bash">
     <!-- cd to PGE root -->
     <cmd>echo "Running PGE Task Hello"</cmd>
-    <cmd>echo "hello" > yo</cmd>
-    <cmd>cd [PGE_HOME]/pge_task</cmd>
-    <cmd>echo "hello1" > yo1</cmd>
+    <cmd>echo "[JobDir]" > yo</cmd>
+    <cmd>cd [PGE_HOME]</cmd>
+    <cmd>echo "[FileLocation] [Filename]" > yo1</cmd>
     
   </exe>
  
@@ -27,9 +27,6 @@
     <metadata key="ProductionDateTime" val="[DATE.UTC]"/>
     <metadata key="JobDir" val="/home/poojit/Desktop"/>
     <metadata key="ProductType" val="EmploymentJob"/>
-    <!--<metadata key="InputFile1" val="[PGE_HOME]/pge_task/files/concatenatingInputFile1.txt"/>
-    <metadata key="InputFile2" val="[PGE_HOME]/pge_task/files/concatenatingInputFile2.txt"/>
-    <metadata key="OutputFile" val="[JobDir]/concatenatedOutputFile-[ProductionDateTime].txt"/> -->
   </customMetadata>
  
 </pgeConfig>
