@@ -25,7 +25,7 @@
  
   <configuration>
      <property name="PGETask_Name" value="PGETask"/>
-     <property name="PGETask_ConfigFilePath" value="/home/poojit/Desktop/xdata-employment/pge/policy/pge_task/pge-configs/PGEConfig.xml" envReplace="true"/>
+     <property name="PGETask_ConfigFilePath" value="/home/poojit/Desktop/xdata-employment/pge/policy/PGEConfig.xml" envReplace="true"/>
      <property name="PGETask_DumpMetadata" value="true"/>
      <property name="PCS_WorkflowManagerUrl" value="http://localhost:9001" envReplace="true" />
      <property name="PCS_FileManagerUrl"     value="http://localhost:9000" envReplace="true"/>
