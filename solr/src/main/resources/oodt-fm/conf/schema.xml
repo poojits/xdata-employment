@@ -129,6 +129,7 @@
    <field name="firstSeenDate" type="date" indexed="true" stored="true" required="true" multiValued="false"/>
    <field name="url" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
    <field name="lastSeenDate" type="date" indexed="true" stored="true" required="true" multiValued="false"/>
+   <field name="latlong" type="location" indexed="true" stored="true" required="false" multiValued="false"/>
 
   
    <!-- all other fields are indexed and stored as-is and can have multiple values -->

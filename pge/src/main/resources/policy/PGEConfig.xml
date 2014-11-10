@@ -4,11 +4,9 @@
   <!-- How to run the PGE -->
   <exe dir="[JobDir]" shell="/bin/bash">
     <!-- cd to PGE root -->
-    <cmd>echo "Running PGE Task Hello"</cmd>
-    <cmd>echo "[JobDir]" > yo</cmd>
-    <cmd>cd [PGE_HOME]</cmd>
-    <cmd>echo "[FileLocation] [Filename]" > yo1</cmd>
-    
+    <cmd>echo "Running PGE Task"</cmd>
+    <cmd>python repack.py -f [FileLocation]/[Filename]</cmd>
+    <cmd>find [FileLocation]/[Filename] -name *.json | poster -u "[SolrUrl]" -v > [JobDir]/solrjsonposter.log 2[GreaterThan][Ampersand]1 </cmd>    
   </exe>
  
   <!-- Custom metadata to add to output files -->
