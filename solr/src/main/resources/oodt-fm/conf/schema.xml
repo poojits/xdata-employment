@@ -130,7 +130,8 @@
 
   
    <!-- all other fields are indexed and stored as-is and can have multiple values -->
-   <dynamicField name="*" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true" />
+   <!-- <dynamicField name="*" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true" /> -->
+   <dynamicField name="*_coordinate"  type="tdouble" indexed="true"  stored="false"/>
 
    <!-- catch-all text fields for full free-text query -->
    <copyField source="*" dest="text" />
