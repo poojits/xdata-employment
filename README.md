@@ -31,11 +31,12 @@ CTRL+A, D
 ```
 
 Open the browser to ```http://127.0.0.1:8080/solr/``` and see the files that are being indexed. Also refer to ```http://127.0.0.1:8080/opsui``` for system status.
+
 Keep in Mind
 ============
 1. This project is sufficient in itself, THERE IS NO NEED TO MOVE ANY LIB FILES AROUND. 
 2. The parameter ```-Pfm-solr-catalog``` is not supposed to be confused with OODT Radix's parameter. We have made modifications to the assembly rules which run Lucene's Filemanager catalog and not Solr's Filemanager Catalog.
 3. When building the package, downloading the maven binaries can take time, so please be patient as some servers are slow.
-4. This containts SOLR as well, so please turn off other running instances of SOLR.
+4. This contains SOLR as well, so please turn off other running instances of SOLR.
 5. This assumes that your data files are in ```/media/hdd/dedupe```. Please make the necessary change when running ```crawler_launcher```.
 6. For link based ranking, we run ```python linkBasedRanker.py -d /media/hdd/dedupe``` offline. We have already included the result of this in ```xdata-employment/distribution/src/main/resources/bin``` folder as ```*.pickle``` files.
