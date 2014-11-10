@@ -25,7 +25,7 @@
     <metadata key="CshPipeToStdOutAndError" val="[GreaterThan][Ampersand][Exclamation]"/>
  
     <metadata key="ProductionDateTime" val="[DATE.UTC]"/>
-    <metadata key="JobDir" val="/home/poojit/Desktop"/>
+    <metadata key="JobDir" val="[OODT_HOME]/bin"/>
     <metadata key="ProductType" val="EmploymentJob"/>
   </customMetadata>
  
