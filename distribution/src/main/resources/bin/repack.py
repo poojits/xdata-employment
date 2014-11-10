@@ -16,7 +16,7 @@ def main(argv=None):
   
   option, value = opts[0]
   filePath = value
-  picklePath = '/Users/mlisa/Downloads/'
+  picklePath = './'
 
   with open(picklePath+'geo.pickle', 'rb') as f:
     geoCount = pickle.load(f)
