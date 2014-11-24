@@ -3,9 +3,9 @@
 	<mime type="product/employment">
 		<extractor class="org.apache.oodt.cas.metadata.extractors.TikaCmdLineMetExtractor">
 			<config file="tikaextractor.config"/>
-			<preCondComparators>
+			<!-- <preCondComparators>
 				<preCondComparator id="CheckThatDataFileSizeIsGreaterThanZero"/>
-			</preCondComparators>
+			</preCondComparators> -->
 		</extractor>
 	</mime>
 </cas:mimetypemap>
