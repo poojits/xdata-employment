@@ -12,7 +12,7 @@ def crawl(data_folder, bucket):
 	bucket_path = os.path.join(data_folder,'data'+str(bucket+1))
 	command = '''./crawler/bin/crawler_launcher --operation --launchAutoCrawler --filemgrUrl http://localhost:9000 --clientTransferer org.apache.oodt.cas.filemgr.datatransfer.InPlaceDataTransferFactory --productPath %s --mimeExtractorRepo ./crawler/policy/mime-extractor-map.xml --workflowMgrUrl http://localhost:9001 -ais TriggerPostIngestWorkflow''' % bucket_path
 	t1 = time.time()
-	print command
+	os.system(command)
 	return (bucket,time.time()-t1)
 
 def callback_log(callback_data):
