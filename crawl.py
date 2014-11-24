@@ -10,7 +10,7 @@ def folder_exists(folderPath):
 
 def crawl(data_folder, bucket):
 	bucket_path = os.path.join(data_folder,'data'+str(bucket+1))
-	command = '''./crawler/bin/crawler_launcher --operation --launchAutoCrawler --filemgrUrl http://localhost:9000 --clientTransferer org.apache.oodt.cas.filemgr.datatransfer.InPlaceDataTransferFactory --productPath %s --mimeExtractorRepo ./crawler/policy/mime-extractor-map.xml --workflowMgrUrl http://localhost:9001 -ais TriggerPostIngestWorkflow''' % bucket_path
+	command = '''./crawler/bin/crawler_launcher --operation --launchAutoCrawler --filemgrUrl http://localhost:9000 --clientTransferer org.apache.oodt.cas.filemgr.datatransfer.InPlaceDataTransferFactory --productPath %s --mimeExtractorRepo %s --workflowMgrUrl http://localhost:9001 -ais TriggerPostIngestWorkflow''' % (os.path.abspath(bucket_path),os.path.abspath('./crawler/policy/mime-extractor-map.xml'))
 	t1 = time.time()
 	os.system(command)
 	return (bucket,time.time()-t1)
@@ -40,7 +40,7 @@ def main(argv):
 		pool.apply_async(crawl, args =(data_folder,bucket), callback = callback_log)
 	pool.close()
 	pool.join()
-	print 'Total time taken to Index = %f' % sum(time_data)
+	print 'Total time taken to Index = %f' % max(time_data)
 
 if __name__ == "__main__":
 	main(sys.argv)
