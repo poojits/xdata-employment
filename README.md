@@ -26,7 +26,7 @@ Running the Crawler
 ```
 cd crawler/bin
 screen
-time ./crawler_launcher --operation --launchAutoCrawler --filemgrUrl http://localhost:9000 --clientTransferer org.apache.oodt.cas.filemgr.datatransfer.LocalDataTransferFactory --productPath /media/hdd/dedupe --mimeExtractorRepo ../policy/mime-extractor-map.xml --workflowMgrUrl http://localhost:9001 -ais TriggerPostIngestWorkflow
+time ./crawler_launcher --operation --launchAutoCrawler --filemgrUrl http://localhost:9000 --clientTransferer org.apache.oodt.cas.filemgr.datatransfer.InPlaceDataTransferFactory --productPath /media/hdd/dedupe --mimeExtractorRepo ../policy/mime-extractor-map.xml --workflowMgrUrl http://localhost:9001 -ais TriggerPostIngestWorkflow
 CTRL+A, D
 ```
 
