@@ -14,7 +14,7 @@ def crawl(data_folder, bucket):
 	t = 0
 	for f in allFiles:
 		file_path = os.path.join(bucket_path,f)
-		command1 = '''python repack.py %s''' % file_path
+		command1 = '''python repack.py -f %s''' % file_path
 		command2 = '''find %s | poster -u %s''' % (file_path,"http://localhost:8080/solr/oodt-fm/update/json?commit=true")
 		t1 = time.time()
 		os.system(command1)
