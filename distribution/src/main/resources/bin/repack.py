@@ -53,6 +53,10 @@ def main(argv=None):
         j['firstSeenDate'] = j['firstSeenDate'] + 'T00:00:00Z'
         j['lastSeenDate'] = j['lastSeenDate'] + 'T00:00:00Z'
         j['geohash'] = geoh
+        j['geohash1'] = geoh[:1]
+        j['geohash2'] = geoh[:2]
+        j['geohash3'] = geoh[:3]
+        j['geohash4'] = geoh[:4]
 
 
     with open( filePath, 'w') as f:
