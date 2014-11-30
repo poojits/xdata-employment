@@ -126,6 +126,7 @@
    <field name="url" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
    <field name="lastSeenDate" type="date" indexed="true" stored="true" required="false" multiValued="false"/>
    <field name="latlong" type="location" indexed="true" stored="true" required="false" multiValued="false"/>
+   <field name="geohash" type="string" indexed="true" stored="true" required="false" multiValued="false"/>
    <field name="boost" type="double" indexed="false" stored="true" required="false" multiValued="false"/>
 
   

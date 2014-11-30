@@ -36,7 +36,8 @@ def main(argv=None):
       if j['lattitude'] == '' or j['longitude'] == '' or j['jobtype'] == '':
         j['boost'] = 0.0
       else:
-        gh = geohash.encode(float(j['lattitude']), float(j['longitude']))[:2]
+        geoh = geohash.encode(float(j['lattitude']), float(j['longitude']))
+        gh = geoh[:2]
         c = j['jobtype']
         j['boost'] = (geoCount[gh]/geoSum + jobCount[c]/jobSum)/2.0
 
@@ -51,6 +52,8 @@ def main(argv=None):
         j['postedDate'] = j['postedDate'] + 'T00:00:00Z'
         j['firstSeenDate'] = j['firstSeenDate'] + 'T00:00:00Z'
         j['lastSeenDate'] = j['lastSeenDate'] + 'T00:00:00Z'
+        j['geohash'] = geoh
+
 
     with open( filePath, 'w') as f:
       jstr = json.dumps( j, ensure_ascii=False, encoding="iso-8859-1")
